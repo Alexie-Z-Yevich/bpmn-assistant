@@ -6,6 +6,9 @@ WORKDIR /app
 COPY pyproject.toml /app/
 COPY uv.lock /app/
 
+# Update pip to prevent errors
+RUN pip install --upgrade pip
+
 # Install uv
 RUN pip install --no-cache-dir uv
 
